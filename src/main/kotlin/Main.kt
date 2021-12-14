@@ -37,15 +37,32 @@ fun imprimirCapasInf(edad: Int, numCapas: Int): String {
     }
     return mensaje
 }
-fun imprimirMensaje(mensaje: String): String {
+fun imprimirMensaje(mensaje: String,edad: Int): String {
     var message: String = "\"-._.-\""
-    return message.repeat(5) + "\n $mensaje \n" + message.repeat(5)
+    var repeticiones: Int = edad/7
+    return message.repeat(repeticiones) + "\n $mensaje \n" + message.repeat(repeticiones)
+    //En la primera versión puse un número fijo de repeticiones
+}
+
+fun mensajeCentrado(mensaje: String, edad: Int): String {
+    var numCaracteres: Int = (edad - mensaje.length)/2
+    return " ".repeat(numCaracteres) + mensaje + " ".repeat(numCaracteres)
+
 }
 
 
 fun main() {
-    println(imprimirVelas(30))
-    println(imprimirCapaSup(30))
-    println(imprimirCapasInf(30,5))
-    println(imprimirMensaje("¡¡Feliz Feliz en tu diaa!!"))
+    print("Escriba la edad de la persona a felicitar: ")
+    var edad = readLine()!!.toInt() ?: 16
+    print("Escriba el número de capas que desea: ")
+    var capas = readLine()!!.toInt() ?: 2
+    print("Escriba el mensaje que desea poner en la felicitación: ")
+    var mensaje = readLine()!!.toString() ?: "¡¡¡¡ Feliz Cumpleaños !!!!"
+    mensaje = mensajeCentrado(mensaje,edad)
+    println(imprimirMensaje(mensaje,edad))
+    println(imprimirVelas(edad))
+    println(imprimirCapaSup(edad))
+    println(imprimirCapasInf(edad,capas))
+    println(imprimirMensaje(mensaje,edad))
 }
+
