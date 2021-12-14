@@ -44,8 +44,8 @@ fun imprimirMensaje(mensaje: String): String {
 
 
 fun main() {
-    println(imprimirVelas(12))
-    println(imprimirCapaSup(12))
-    println(imprimirCapasInf(12,4))
+    println(imprimirVelas(30))
+    println(imprimirCapaSup(30))
+    println(imprimirCapasInf(30,5))
     println(imprimirMensaje("¡¡Feliz Feliz en tu diaa!!"))
 }
